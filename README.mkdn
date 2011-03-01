@@ -34,7 +34,7 @@ OMG TEXT is a compass extension for adding a 3D css text shadow effect to your t
 The mixin takes a few arguements that gives you control over your shadows.  
     
     #OMG TEXT mixin with argument description
-    @include omg-text(shadow-color, angle, depth, style,  shade-amout)     
+    @include omg-text(shadow-color, angle, depth, style, shade-amout)     
 
 Argument definiton:
 
@@ -65,11 +65,12 @@ There are two styles you can use, "flat" or "shaded". A flat text shadow will ju
 
 ![omg text styles](http://dl.dropbox.com/u/1274637/omg-shaded-flat.png) 
 
-### shade-amount
+### shade-amount:
 
 This is only required if you use the "shaded" style. A value greather than 1 will get dark fastly a value less than 1 will provide more sublte shading. The shaded example above uses a shade-amount of 0.8 
 
-### Examples
+Examples
+=======
 
 The mixins used to create the text shadows in the quick [demo page](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html).
     
