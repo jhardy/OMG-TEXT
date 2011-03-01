@@ -2,7 +2,7 @@ OMG TEXT compass extension
 ==========================
 
 A way to create ridiculously awesome CSS3 text shadows. 
-Insipred by Mark Otto's [CSS3 3D text](http://www.markdotto.com/2011/01/05/3d-text-using-just-css/)
+Insipred by Mark Otto's [CSS3 3D text](http://www.markdotto.com/2011/01/05/3d-text-using-just-css/). See a quick [demo](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html) of the extension in action.
 
 Installation
 ============
