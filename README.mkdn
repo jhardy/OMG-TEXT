@@ -23,7 +23,7 @@ Or create a new project:
 
 Now just import the OMG TEXT extension: 
 
-    @import "omg-text"t 
+    @import "omg-text"
 
 
 
