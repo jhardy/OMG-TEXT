@@ -1,7 +1,7 @@
 OMG TEXT compass extension
 ==========================
 
-A way to create ridiculously awesome CSS3 text shadows 
+A way to create ridiculously awesome CSS3 text shadows. 
 Insipred by Mark Otto's [CSS3 3D text](http://www.markdotto.com/2011/01/05/3d-text-using-just-css/)
 
 Installation
@@ -20,6 +20,11 @@ Install to an existing project:
 Or create a new project:
 
     compass create project_name -r omg-text --using omg-text 
+
+Now just import the OMG TEXT extension: 
+
+    @import "omg-text"t 
+
 
 
 OMG TEXT Shadows
@@ -54,7 +59,7 @@ The angle of the text shadow. You simple pass the number of the angle you would 
 
 The depth of the text shadow, a depth of 10 will produce 10 shadows and will be a shallow, a depth of 70 will produce 70 shadows and appear deeper. 
 
-### style
+### style:
 
 There are two styles you can use, "flat" or "shaded". A flat text shadow will just repeat the same color for the complete depth. A shaded shadow will result in the color of the text shadow being darkened as the depth increase. Example: "shaded" is on the left "flat" is on the right, both use the same shadow-color
 
