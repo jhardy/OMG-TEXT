@@ -69,3 +69,22 @@ There are two styles you can use, "flat" or "shaded". A flat text shadow will ju
 
 This is only required if you use the "shaded" style. A value greather than 1 will get dark fastly a value less than 1 will provide more sublte shading. The shaded example above uses a shade-amount of 0.8 
 
+### Examples
+
+The mixins used to create the text shadows in the quick [demo page](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html).
+    
+    #omg-text-sample-1 
+    	@include omg-text(#759da6, 220, 25, "shaded", 0.35) 
+
+    #omg-text-sample-2 
+    	@include omg-text(#5193b9, 45, 19, "flat", 0.3) 
+
+    #omg-text-sample-3 
+    	@include omg-text(#b8e880, "top left", 25,  "shaded", 0.3)
+
+    #omg-text-sample-4
+    	@include omg-text(#ef8e3f, "right", 22, "flat", 0)       
+
+      
+                                                         
+
