@@ -1,0 +1,49 @@
+@import "compass/css3/text-shadow"
+$direction-markup : false
+$angle: 0
+		
+
+@mixin omg-text($color, $direction: 0, $levels: 15 , $style: "flat",  $darken-amount: 0)
+	
+	$shadowColor : $color
+	$shadow-markup : ""
+	$darken-amount: $darken-amount
+
+
+	@for $i from 0 through $levels
+		@include omg-text-offest($direction, $i)		
+		
+		@if $style == "shaded"
+			
+			$shadowColor : darken($shadowColor, $i * ($darken-amount/10))
+		@else if $style == "flat"
+			$shadowColor : $color
+				
+		$shadow-markup : $shadow-markup + $direction-markup + $shadowColor
+		@if $i < $levels
+			$shadow-markup: $shadow-markup + ", "
+	
+	@include text-shadow(unquote($shadow-markup))
+
+@mixin omg-text-offest($direction, $i)
+	
+	@if $direction == "top"
+		$angle: 0deg			
+	@else if $direction == "top right"
+		$angle: 45deg		
+	@else if $direction == "right"
+		$angle: 90deg
+	@else if $direction == "bottom right"
+		$angle: 135deg
+	@else if $direction == "bottom"
+		$angle: 180deg
+	@else if $direction == "bottom left"
+		$angle: 225deg
+	@else if $direction == "left"
+		$angle: 270deg
+	@else if $direction == "top left"
+		$angle: 315deg
+	@else 
+		$angle: $direction/2 * (pi()/180)
+	
+	$direction-markup : ($i) * sin($angle * 2)  + "px " + -($i) * cos($angle * 2) + "px 0 "

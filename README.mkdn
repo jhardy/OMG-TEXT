@@ -1,0 +1,66 @@
+OMG TEXT compass extension
+==========================
+
+A way to create ridiculously awesome CSS3 text shadows 
+Insipred by Mark Otto's [CSS3 3D text](http://www.markdotto.com/2011/01/05/3d-text-using-just-css/)
+
+Installation
+============
+
+From the command line:
+
+    gem install omg-text
+
+Install to an existing project:
+
+    # edit the project configuration file and add:
+    require 'omg-text'
+    compass install omg-text
+    
+Or create a new project:
+
+    compass create project_name -r omg-text --using omg-text 
+
+
+OMG TEXT Shadows
+================
+
+OMG TEXT is a compass extension for adding a 3D css text shadow effect to your text.
+The mixin takes a few arguements that gives you control over your shadows.  
+    
+    #OMG TEXT mixin with argument description
+    @include omg-text(shadow-color, angle, depth, style,  shade-amout)     
+
+Argument definiton:
+
+### shadow-color: 
+
+The color of the text shadow that will be applied
+
+### angle:
+
+The angle of the text shadow. You simple pass the number of the angle you would like or optionally there are a few presets you can use by passing a string. Here is the list of the presets with its associated angle.
+
+* "top" (0)
+* "top right" (45)
+* "right" (90)
+* "bottom right" (135)
+* "bottom" (180)
+* "bottom left" (220)
+* "left" (270)
+* "top left" (315) 
+
+### depth:
+
+The depth of the text shadow, a depth of 10 will produce 10 shadows and will be a shallow, a depth of 70 will produce 70 shadows and appear deeper. 
+
+### style
+
+There are two styles you can use, "flat" or "shaded". A flat text shadow will just repeat the same color for the complete depth. A shaded shadow will result in the color of the text shadow being darkened as the depth increase. Example: "shaded" is on the left "flat" is on the right, both use the same shadow-color
+
+![omg text styles](http://dl.dropbox.com/u/1274637/omg-shaded-flat.png) 
+
+### shade-amount
+
+This is only required if you use the "shaded" style. A value greather than 1 will get dark fastly a value less than 1 will provide more sublte shading. The shaded example abouve uses a shade-amount of 0.8 
+
