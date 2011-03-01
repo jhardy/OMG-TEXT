@@ -67,5 +67,5 @@ There are two styles you can use, "flat" or "shaded". A flat text shadow will ju
 
 ### shade-amount
 
-This is only required if you use the "shaded" style. A value greather than 1 will get dark fastly a value less than 1 will provide more sublte shading. The shaded example abouve uses a shade-amount of 0.8 
+This is only required if you use the "shaded" style. A value greather than 1 will get dark fastly a value less than 1 will provide more sublte shading. The shaded example above uses a shade-amount of 0.8 
 
