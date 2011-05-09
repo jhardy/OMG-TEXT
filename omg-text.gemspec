@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.summary = %q{a ridiculous text shadows extension for compass}
   s.description = %q{a ridiculous text shadows extension for compass}
   s.email = "jared@jaredhardy.com"
-  s.homepage = "http://www.jaredhardy.com/"
+  s.homepage = "http://www.jaredhardy.com/omg-text/"
 
   # Gem Files
   s.files = %w(README.mkdn)

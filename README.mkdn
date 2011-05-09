@@ -1,7 +1,7 @@
 OMG TEXT compass extension
 ==========================
 
-A way to create ridiculously awesome CSS3 text shadows. See a quick [demo](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html) of the extension in action.
+A way to create ridiculously awesome CSS3 text shadows. See the extension in action on the [demo page](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html).
 
 Installation
 ============
@@ -10,19 +10,23 @@ From the command line:
 
     sudo gem install omg-text
 
-Install to an existing project:
+Installing into an existing project:
 
     # edit the project configuration file and add:
     require 'omg-text'
+
+	#from the command line
     compass install omg-text
-    
+
+	#import the extension into your scss/sass file
+	@import "omg-text"
+
 Or create a new project:
 
     compass create <project_name> -r omg-text --using omg-text 
 
-Now just import the OMG TEXT extension: 
-
-    @import "omg-text"
+	#import the extension into your scss/sass file
+	@import "omg-text"
 
 
 
@@ -38,7 +42,8 @@ OMG TEXT is a compass extension for adding multiple text shadows to your text. T
 	#OMG TEXT mixin with argument description for offset style
 	@include omg-offset(angle, shadow 1 color, shadow 1 depth, shadow 2 color, shadow 2 depth)
 
-Argument definiton:
+Argument definitons:
+====================
 
 ### shadow-color: 
 
@@ -49,13 +54,13 @@ The color of the text shadow that will be applied
 The angle of the text shadow. You simple pass the number of the angle you would like or optionally there are a few presets you can use by passing a string. Here is the list of the presets with its associated angle.
 
 * "top" (0)
-* "top right" (45)
+* "top-right" (45)
 * "right" (90)
-* "bottom right" (135)
+* "bottom-right" (135)
 * "bottom" (180)
-* "bottom left" (220)
+* "bottom-left" (220)
 * "left" (270)
-* "top left" (315) 
+* "top-left" (315) 
 
 ### depth:
 
@@ -63,7 +68,7 @@ The depth of the text shadow, a depth of 10 will produce 10 shadows and will be 
 
 ### style:
 
-There are two styles you can use, "flat" or "shaded". A flat text shadow will just repeat the same color for the complete depth. A shaded shadow will result in the color of the text shadow being darkened as the depth increase. Example: "shaded" is on the left "flat" is on the right, both use the same shadow-color
+There are two styles you can use, "flat" or "shaded". A flat text shadow will repeat the same color for the complete depth. A shaded shadow will result in the color of the text shadow being darkened as the depth increase. Example: "shaded" is on the left "flat" is on the right, both use the same shadow-color
 
 ![omg text styles](http://dl.dropbox.com/u/1274637/omg-shaded-flat.png) 
 
@@ -72,24 +77,29 @@ There are two styles you can use, "flat" or "shaded". A flat text shadow will ju
 This is only required if you use the "shaded" style, the higher the number the darker the final color of the shadow transition will be.
 
 Examples
-=======
+========
 
-The mixins used to create the text shadows in the quick [demo page](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html).
+See some live examples on the [demo page](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html).
     
-    #omg-text-sample-1 
-    	@include omg-text(#759da6, 220, 25, "shaded", 0.35) 
+	#omg-flat-sample-1 
+	@include omg-text(#db2cac, 220, 45, "shaded", 0.35) 
+	
+	#omg-flat-sample-2 
+	@include omg-text(#ef8e3f, "right", 22, "flat", 0)	
 
-    #omg-text-sample-2 
-    	@include omg-text(#5193b9, 45, 19, "flat") 
+	#omg-shaded-sample-1 
+	@include omg-text(#5193b9, 90, 35, "shaded", 5) 
 
-    #omg-text-sample-3 
-    	@include omg-text(#b8e880, "top left", 25,  "shaded", 0.3)
+	#omg-shaded-sample-2 
+	@include omg-text(#b8e880, "top-left", 35, "shaded", 3) 
 
-    #omg-text-sample-4
-    	@include omg-text(#ef8e3f, "right", 22, "flat")   
 
-    #omg-offset-sample-1
-		@include omg-offset(140, #1672b3, 10%, 4, #1672b3, 7)
+	#omg-offset-sample-1 
+	@include omg-offset(130, #fff, 6, #ccc, 12)	
+
+	#omg-offset-sample-2 
+	@include omg-offset("bottom-left", #fff, 6, #e75032, 10)
+
 
       
                                                          
