@@ -9,41 +9,65 @@ $angle: 0
 	$shadow-markup : ""
 	$darken-amount: $darken-amount
 
-
+	// Loop through all the levels specified
 	@for $i from 0 through $levels
-		@include omg-text-offest($direction, $i)		
+		//for each level apply a text shadow at the correct angle
+		@include omg-text-offset($direction, $i)		
 		
 		@if $style == "shaded"
-			
-			$shadowColor : darken($shadowColor, $i * ($darken-amount/10))
+			// Darken the shadow text color
+			$shadowColor : darken($shadowColor, $i * ($darken-amount/100))
 		@else if $style == "flat"
+			// Keep same color
 			$shadowColor : $color
-				
+		
+		// Update the string that is used to create the text shadow
 		$shadow-markup : $shadow-markup + $direction-markup + $shadowColor
+		// If you are not on the last level add a comma at the end of the string so you can apply the next text shadow
 		@if $i < $levels
 			$shadow-markup: $shadow-markup + ", "
 	
+	// After loop finishes add the text shadow
 	@include text-shadow(unquote($shadow-markup))
 
-@mixin omg-text-offest($direction, $i)
+		
+@mixin omg-offset($angle, $color1, $levels1, $color2, $levels2)
+
+	$shadow-markup : ""
 	
+	@include omg-text-offset($angle, $levels1)
+	$shadow-markup: $shadow-markup + $direction-markup + $color1 + ", "
+	
+	@include omg-text-offset($angle, $levels2)
+	$shadow-markup: $shadow-markup + $direction-markup + $color2
+	
+	@include text-shadow(unquote($shadow-markup))
+
+		
+
+
+@mixin omg-text-offset($direction, $i)
+	
+	// Shortcuts for directions
 	@if $direction == "top"
-		$angle: 0deg			
-	@else if $direction == "top right"
-		$angle: 45deg		
+		$direction: 0
+	@else if $direction == "top-right"
+		$direction: 45
 	@else if $direction == "right"
-		$angle: 90deg
-	@else if $direction == "bottom right"
-		$angle: 135deg
+		$direction: 90
+	@else if $direction == "bottom-right"
+		$direction: 135
 	@else if $direction == "bottom"
-		$angle: 180deg
-	@else if $direction == "bottom left"
-		$angle: 225deg
+		$direction: 180
+	@else if $direction == "bottom-left"
+		$direction: 225
 	@else if $direction == "left"
-		$angle: 270deg
-	@else if $direction == "top left"
-		$angle: 315deg
+		$direction: 270
+	@else if $direction == "top-left"
+		$direction: 315
 	@else 
-		$angle: $direction/2 * (pi()/180)
-	
-	$direction-markup : ($i) * sin($angle * 2)  + "px " + -($i) * cos($angle * 2) + "px 0 "
+		$direction: $direction
+		
+	$angle: $direction * (pi()/180)
+	// Calculate the correct angle
+	$direction-markup : ($i) * sin($angle)  + "px " + -($i) * cos($angle) + "px 0 "

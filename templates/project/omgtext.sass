@@ -1,0 +1,35 @@
+@import "omg-text"
+
+// Here are some sample usage cases.
+
+#omg-flat-sample-1 
+	font-size: 320px
+	color: #ffbeed
+	@include omg-text(#db2cac, 220, 45, "shaded", 0.35) 
+	
+#omg-flat-sample-2 
+	font-size: 320px
+	color: #e8d850
+	@include omg-text(#ef8e3f, "right", 22, "flat", 0)	
+
+#omg-shaded-sample-1 
+	font-size: 320px
+	color: #82cffb
+	@include omg-text(#5193b9, 90, 35, "shaded", 5) 
+
+#omg-shaded-sample-2 
+	font-size: 320px
+	color: #8ccf3c
+	@include omg-text(#b8e880, "top-left", 35, "shaded", 3) 
+
+
+#omg-offset-sample-1 
+	font-size: 320px
+	color: #222
+	@include omg-offset(130, #fff, 6, #ccc, 12)
+	
+
+#omg-offset-sample-2 
+	font-size: 320px
+	color: #e75032
+	@include omg-offset("bottom-left", #fff, 6, #e75032, 10)

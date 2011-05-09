@@ -1,15 +1,14 @@
 OMG TEXT compass extension
 ==========================
 
-A way to create ridiculously awesome CSS3 text shadows. 
-Insipred by Mark Otto's [CSS3 3D text](http://www.markdotto.com/2011/01/05/3d-text-using-just-css/). See a quick [demo](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html) of the extension in action.
+A way to create ridiculously awesome CSS3 text shadows. See a quick [demo](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html) of the extension in action.
 
 Installation
 ============
 
 From the command line:
 
-    gem install omg-text
+    sudo gem install omg-text
 
 Install to an existing project:
 
@@ -19,7 +18,7 @@ Install to an existing project:
     
 Or create a new project:
 
-    compass create project_name -r omg-text --using omg-text 
+    compass create <project_name> -r omg-text --using omg-text 
 
 Now just import the OMG TEXT extension: 
 
@@ -30,11 +29,14 @@ Now just import the OMG TEXT extension:
 OMG TEXT Shadows
 ================
 
-OMG TEXT is a compass extension for adding a 3D css text shadow effect to your text.
-The mixin takes a few arguements that gives you control over your shadows.  
-    
-    #OMG TEXT mixin with argument description
-    @include omg-text(shadow-color, angle, depth, style, shade-amout)     
+OMG TEXT is a compass extension for adding multiple text shadows to your text. The extension provides two easy to use mixins for adding the shadows. There are three shadow styles for you to choose from, flat, shaded and offset. The flat and shaded styles share the same mixin and the offset style has a mixin of its own. 
+
+ 
+    #OMG TEXT mixin with argument description for flat and shaded styles
+    @include omg-text(shadow-color, angle, depth, style, shade-amout)
+
+	#OMG TEXT mixin with argument description for offset style
+	@include omg-offset(angle, shadow 1 color, shadow 1 depth, shadow 2 color, shadow 2 depth)
 
 Argument definiton:
 
@@ -67,7 +69,7 @@ There are two styles you can use, "flat" or "shaded". A flat text shadow will ju
 
 ### shade-amount:
 
-This is only required if you use the "shaded" style. A value greather than 1 will get dark fastly a value less than 1 will provide more sublte shading. The shaded example above uses a shade-amount of 0.8 
+This is only required if you use the "shaded" style, the higher the number the darker the final color of the shadow transition will be.
 
 Examples
 =======
@@ -78,13 +80,16 @@ The mixins used to create the text shadows in the quick [demo page](http://dl.dr
     	@include omg-text(#759da6, 220, 25, "shaded", 0.35) 
 
     #omg-text-sample-2 
-    	@include omg-text(#5193b9, 45, 19, "flat", 0.3) 
+    	@include omg-text(#5193b9, 45, 19, "flat") 
 
     #omg-text-sample-3 
     	@include omg-text(#b8e880, "top left", 25,  "shaded", 0.3)
 
     #omg-text-sample-4
-    	@include omg-text(#ef8e3f, "right", 22, "flat", 0)       
+    	@include omg-text(#ef8e3f, "right", 22, "flat")   
+
+    #omg-offset-sample-1
+		@include omg-offset(140, #1672b3, 10%, 4, #1672b3, 7)
 
       
                                                          
