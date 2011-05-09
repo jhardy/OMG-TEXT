@@ -1,7 +1,7 @@
 OMG TEXT compass extension
 ==========================
 
-A way to create ridiculously awesome CSS3 text shadows. See the extension in action on the [demo page](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html).
+A way to create ridiculously awesome CSS3 text shadows. See the extension in action on the [demo page](http://jaredhardy.com/omg-text/).
 
 Installation
 ============
@@ -79,7 +79,7 @@ This is only required if you use the "shaded" style, the higher the number the d
 Examples
 ========
 
-See some live examples on the [demo page](http://dl.dropbox.com/u/1274637/omg-text-example/omg-text.html).
+See some live examples on the [demo page](http://jaredhardy.com/omg-text/).
     
 	#omg-flat-sample-1 
 	@include omg-text(#db2cac, 220, 45, "shaded", 0.35) 
